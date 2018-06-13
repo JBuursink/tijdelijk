@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="icon" href="img/present_logo.png">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<title>CadeauPlanner</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="index.html">Cadeau Planner</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" href="#">Cadeau's</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="nieuwCadeau.html">Nieuw cadeau plannen</a>
+							<a class="dropdown-item" href="mijnCadeaus.html">Mijn cadeau's</a>
+							<a class="dropdown-item
+								" href="https://www.cadeau.nl/themas/cadeau-idee" target="_blank">Ideeën nodig?
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">Inloggen</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="jumbotron">
+			<h1 class="display-4">{PLANNER TITEL}</h1>
+			<br>
+			<p class="lead">{PLANNER BESCHRIJVING}</p>
+			<br>
+			<p class="lead">{PLANNER DEADLINE}</p>
+		</div>
+		<div class='navbar bg-primary'>
+			<font color="white">Idee toevoegen:</font>
+		</div>
+		<div class="jumbotron">
+			<form>
+				<label for="ideeBeschrijving" name="ideeBeschrijvingLabel">
+					<i></i>Beschrijf het idee (max 20 tekens)</label>
+				<input type="naam" id="ideeBeschrijving" class="form-control" placeholder="Bijv. Verjaardag.." required autofocus=""></input>
+				<br>
+				<label for="ideeTijdsduur" name="ideeTijdsduurLabel">Hoelang duurt het om te maken?</label>
+				<input list="tijdsDuren" id="ideeTijdsduur" class="form-control" required autofocus="">
+				<datalist id="tijdsDuren">
+					<option value="Direct"></option>
+					<option value="Minder dan een dag"></option>
+					<option value="1 a 2 dagen"></option>
+					<option value="Minder dan een week"></option>
+					<option value="Langer"></option>
+				</datalist>
+				</input>
+				<br>
+				<label for="ideePrijs" name="ideePrijsLabel">Wat is de geschatte prijs?</label>
+				<input type="naam" id="ideePrijs" class="form-control" placeholder="€ 0,00" required autofocus=""></input><br>
+				<label for="ideeOpmerking" name="ideeOpmerkingLabel">Opmerking</label>
+				<input type="naam" id="ideeOpmerking" class="form-control" autofocus=""></input><br>
+				<a class="btn btn-primary btn-lg" role="button"><font color="white">Toevoegen</font></a>
+		</div>
+		</form>
+	</div>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
