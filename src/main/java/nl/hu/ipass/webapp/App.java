@@ -14,7 +14,7 @@ public class App {
 		// Planner test = new Planner(3131, "jhnkjhkjtest", "dijjjjtiseen tasad", begin,
 		// begin);
 		// nana.save(test);
-		Planner test2 = new Planner(3131, "jsxczcxest", "dipo786239876opoasad", begin, begin);
+		Planner test2 = new Planner(31231, "jsxczcxest", "dipo786239876opoasad", begin, begin);
 		nana.update(test2);
 	}
 }
