@@ -2,6 +2,7 @@ package nl.hu.ipass.webapp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -20,6 +21,21 @@ public class PlannerPostgresDaoImpl extends PostgresBaseDao implements PlannerDa
 			System.out.println(sqle);
 		}
 		return false;
+	}
+
+	public int getHighestID() {
+		try (Connection con = super.getConnection()) {
+			Statement stmt = con.createStatement();
+			ResultSet dbResultSet = stmt.executeQuery("SELECT max(planner_id) as planner_id FROM public.planner;");
+			while (dbResultSet.next()) {
+				int hoogsteId = dbResultSet.getInt("planner_id");
+				return hoogsteId;
+			}
+			return 0;
+		} catch (SQLException sqle) {
+			System.out.println(sqle);
+			return 0;
+		}
 	}
 
 	public List<Planner> findByUser(String accID) {

@@ -1,0 +1,49 @@
+package nl.hu.ipass.webservices;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
+
+import nl.hu.ipass.webapp.Planner;
+
+@Path("/planners")
+public class PlannerRecource {
+
+	@POST
+	@Produces("application/json")
+	public Response createCustomer(@FormParam("titelCadeau") String titel, @FormParam("redenCadeau") String reden,
+			@FormParam("deadlineCadeau") String deadline) {
+		DateFormat format = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
+		try {
+			Date deadlinePlanner = format.parse(deadline);
+			PlannerService service = ServiceProvider.getPlannerService();
+			// De volgende line checkt het hoogste ID in het database en verhoogt het nieuw
+			// individu met 1
+			int plan_ID = service.findHighestID() + 1;
+			Date begindatum = new Date();
+			Planner p1 = new Planner(plan_ID, titel, reden, begindatum, deadlinePlanner);
+			return Response.ok(service.save(p1)).build();
+		} catch (Exception E) {
+			System.out.println(E);
+			return null;
+		}
+	}
+
+	@GET
+	@Produces("application/json")
+	public String test() {
+		return "test";
+	}
+
+}
+// (@FormParam("titelCadeau") String titel, @FormParam("redenCadeau") String
+// reden,
+// @FormParam("deadlineCadeau") Date deadline

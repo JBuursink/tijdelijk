@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container" id="container1">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<a class="navbar-brand" href="index.html">Cadeau Planner</a>
 
@@ -48,23 +48,20 @@
 			<h1 class="display-4">Laten we beginnen!</h1><br>
 			<p class="lead">Om het beste cadeau te kunnen vinden hebben we wat informatie nodig.
 		</div>
+		<nav class="navbar navbar-dark bg-primary"></nav>
         <div class="jumbotron">
-            <form>
-                <h3>Laten we beginnen bij de ontvanger.</h3><br>
-                <label for="ontvangerNaam" name="OntvangerNaam"><i></i>Voor wie is het cadeau?</label>
-                <input type="naam" id="ontvangerNaam" class="form-control" placeholder="Julian Buursink" required="" autofocus=""></input><br>
-                <label for="redenCadeau" name="RedenCadeau"><i></i>Wat is de reden van het cadeau?</label>
-                <input type="naam" id="redenCadeau" class="form-control" placeholder="Verjaardag" required="" autofocus=""></input><br>
-                <label for="" name="naamOntvanger1"><i></i>Wat is de leeftijd van de ontvanger?</label>
-                <input type="naam" id="naamOntvanger" class="form-control" placeholder="18" required="" autofocus=""></input><br>
-            </div><div class="jumbotron">
-                <h3>Nou over het cadeau.</h3><br>
-                <label for="naamOntvanger" name="naamOntvanger1"><i></i>Voor wanneer moet het compleet zijn? (datum)</label>
-                <input type="naam" id="naamOntvanger" class="form-control" placeholder="28-05-2018" required="" autofocus=""></input>
+            <form name="nieuwCadeauForm" id="nieuwCadeauForm">
+				<h3>Beschrijf het cadeau voor de deelnemers:</h3><br>
+				<label for="titelCadeau" name="titelCadeauLabel"><i></i>Geef een titel aan het cadeau, eventueel met de naam van de ontvanger.</label>
+                <input type="text" id="titelCadeau" name="titelCadeau" class="form-control" placeholder="Verjaardag Julian" required="" autofocus=""></input><br>
+                <label for="redenCadeau" name="redenCadeauLabel"><i></i>Beschrijf de reden van het cadeau en eventuele details.</label>
+                <input type="text" id="redenCadeau" name="redenCadeau" class="form-control" placeholder="Surprise party.." required="" autofocus=""></input><br>
+                <label for="deadlineCadeau" name="deadlineCadeauLabel"><i></i>Wat is de deadline van het cadeau?</label>
+				<input type="date" id="deadlineCadeau" name="deadlineCadeau" class="form-control" required autofocus=""></input><br>
+				<button type="submit" id="formButton" role="button" class="btn btn-primary btn-lg" >Planner aanmaken</button>
             </form>
-        </div>
+		</div>
 	</div>
-
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -73,6 +70,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 	    crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/nieuwCadeau.js"></script>
 </body>
 
 </html>
