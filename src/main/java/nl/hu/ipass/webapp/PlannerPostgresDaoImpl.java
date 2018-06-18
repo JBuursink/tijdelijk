@@ -1,10 +1,12 @@
 package nl.hu.ipass.webapp;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlannerPostgresDaoImpl extends PostgresBaseDao implements PlannerDao {
@@ -40,16 +42,34 @@ public class PlannerPostgresDaoImpl extends PostgresBaseDao implements PlannerDa
 
 	public List<Planner> findByUser(String accID) {
 		// -----------------EVENTUELE-TOEVOEGING--------------
-		// try (Connection con = super.getConnection()) {
-		// Statement stmt = con.createStatement();
-		// String s = ("INSERT INTO public.planner VALUES ('" + planner.getPlannerID() +
-		// "');");
-		// stmt.executeUpdate(s);
-		// } catch (SQLException sqle) {
-		// System.out.println(sqle);
-		// }
-		// ---------------------------------------------------
 		return null;
+	}
+
+	public Planner findById(String id) {
+		try (Connection con = super.getConnection()) {
+			Statement stmt = con.createStatement();
+			ResultSet dbResultSet = stmt.executeQuery("SELECT * FROM public.planner WHERE planner_id ='" + id + "';");
+			while (dbResultSet.next()) {
+				Planner p1 = new Planner(dbResultSet.getInt("planner_id"), dbResultSet.getString("titel"),
+						dbResultSet.getString("beschrijving"), dbResultSet.getDate("begindatum"),
+						dbResultSet.getDate("einddatum"));
+				return p1;
+			}
+			return null;
+		} catch (SQLException sqle) {
+			return null;
+		}
+	}
+
+	public boolean verwijder(int ID) {
+		try (Connection con = super.getConnection()) {
+			Statement stmt = con.createStatement();
+			stmt.executeQuery("DELETE FROM public.planner WHERE planner_id = '" + ID + "';");
+			return true;
+		} catch (SQLException sqle) {
+			System.out.println(sqle);
+			return false;
+		}
 	}
 
 	public boolean update(Planner planner) {
@@ -66,16 +86,46 @@ public class PlannerPostgresDaoImpl extends PostgresBaseDao implements PlannerDa
 		}
 		return false;
 	}
+	//
+	// public boolean test(Planner planner) {
+	// try (Connection con = super.getConnection()) {
+	// Statement stmt = con.createStatement();
+	// // String s = ("INSERT INTO public.planner VALUES ('" +
+	// planner.getPlannerID() +
+	// // "');");
+	// // stmt.executeUpdate(s);
+	// } catch (SQLException sqle) {
+	// System.out.println(sqle);
+	// }
+	// return false;
+	// }
 
-	public boolean delete(Planner planner) {
+	@Override
+	public List<Planner> findAll() {
 		try (Connection con = super.getConnection()) {
+			List<Planner> allePlanners = new ArrayList<Planner>();
 			Statement stmt = con.createStatement();
-			// String s = ("INSERT INTO public.planner VALUES ('" + planner.getPlannerID() +
-			// "');");
-			// stmt.executeUpdate(s);
+			String s = ("SELECT * from public.planner;");
+			ResultSet dbResultSet = stmt.executeQuery(s);
+			while (dbResultSet.next()) {
+				int id = dbResultSet.getInt("planner_id");
+				String titel = dbResultSet.getString("titel");
+				String beschrijving = dbResultSet.getString("beschrijving");
+				Date begindatum = dbResultSet.getDate("begindatum");
+				Date einddatum = dbResultSet.getDate("einddatum");
+				Planner p1 = new Planner(id, titel, beschrijving, begindatum, einddatum);
+				allePlanners.add(p1);
+			}
+			return allePlanners;
 		} catch (SQLException sqle) {
 			System.out.println(sqle);
 		}
+		return null;
+	}
+
+	@Override
+	public boolean delete(Planner planner) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 

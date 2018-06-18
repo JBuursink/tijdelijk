@@ -46,15 +46,21 @@
 
 		<div class="jumbotron">
 			<h1 class="display-4">Hier zijn al jouw cadeau planners:</h1><br>
-            <table style ="width:80%">
-                <tr>
-                    <th>Naam</th>
-                    <th>Deadline</th>
-                </tr><tr>
-                    <td>Voorbeeld</td>
-                    <td>Voorbeeld2</td>
+			<a class="float-right btn btn-primary btn-lg" href="nieuwCadeau.html">Nieuwe planner</a>
+		</div>
+		<nav class="navbar navbar-dark bg-primary"></nav>
+		<div class="jumbotron">
+			<table class="table" id="mijnCadeausTable" style ="width:80%">
+				<tr>
+					<th>#</th>
+					<th>Titel</th>
+					<th>Beschrijving</th>
+					<th>Deadline</th>
+					<th></th>
+					<th></th>
                 </tr>
             </table>
+		</div>
 		</div>
 	</div>
 
@@ -66,6 +72,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 	    crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/mijnCadeauLijst.js"></script>
 </body>
 
 </html>

@@ -7,6 +7,8 @@ public interface PlannerDao {
 
 	public List<Planner> findByUser(String accID);
 
+	public List<Planner> findAll();
+
 	public boolean update(Planner planner);
 
 	public boolean delete(Planner planner);

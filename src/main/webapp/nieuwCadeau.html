@@ -50,12 +50,12 @@
 		</div>
 		<nav class="navbar navbar-dark bg-primary"></nav>
         <div class="jumbotron">
-            <form name="nieuwCadeauForm" id="nieuwCadeauForm">
+            <form name="nieuwCadeauForm" id="nieuwCadeauForm" action="mijnCadeaus.html">
 				<h3>Beschrijf het cadeau voor de deelnemers:</h3><br>
 				<label for="titelCadeau" name="titelCadeauLabel"><i></i>Geef een titel aan het cadeau, eventueel met de naam van de ontvanger.</label>
-                <input type="text" id="titelCadeau" name="titelCadeau" class="form-control" placeholder="Verjaardag Julian" required="" autofocus=""></input><br>
+                <input type="text" id="titelCadeau" name="titelCadeau" class="form-control" maxlength="30" placeholder="Verjaardag Julian" required="" autofocus=""></input><br>
                 <label for="redenCadeau" name="redenCadeauLabel"><i></i>Beschrijf de reden van het cadeau en eventuele details.</label>
-                <input type="text" id="redenCadeau" name="redenCadeau" class="form-control" placeholder="Surprise party.." required="" autofocus=""></input><br>
+                <input type="text" id="redenCadeau" name="redenCadeau" class="form-control"  maxlength="250" placeholder="Surprise party.." required="" autofocus=""></input><br>
                 <label for="deadlineCadeau" name="deadlineCadeauLabel"><i></i>Wat is de deadline van het cadeau?</label>
 				<input type="date" id="deadlineCadeau" name="deadlineCadeau" class="form-control" required autofocus=""></input><br>
 				<button type="submit" id="formButton" role="button" class="btn btn-primary btn-lg" >Planner aanmaken</button>

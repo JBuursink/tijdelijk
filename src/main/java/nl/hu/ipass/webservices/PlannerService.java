@@ -1,5 +1,7 @@
 package nl.hu.ipass.webservices;
 
+import java.util.List;
+
 import nl.hu.ipass.webapp.Planner;
 import nl.hu.ipass.webapp.PlannerPostgresDaoImpl;
 
@@ -25,12 +27,23 @@ public class PlannerService {
 		return true;
 
 	}
-	//
-	// public Planner save(int i, String string, String string2, Date begindatum,
-	// Date begindatum2) {
-	// Planner p1 = new Planner(i, string, string2, begindatum, begindatum2);
-	// ppdi.save(p1);
-	// return p1;
+
+	public Planner getPlannerById(String id) {
+		return ppdi.findById(id);
+
+	}
+
+	public List<Planner> getAllePlanners() {
+		return ppdi.findAll();
+
+	}
+
+	// public Planner getPlannerById(int id) {
+	// return ppdi.findByPlannerId(id);
 	// }
+
+	public boolean delete(int id) {
+		return ppdi.verwijder(id);
+	}
 
 }

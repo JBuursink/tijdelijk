@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="icon" href="img/present_logo.png">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/minorChanges.css">
+	<title>CadeauPlanner</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="index.html">Cadeau Planner</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" href="#">Cadeau's</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="nieuwCadeau.html ">Nieuw cadeau plannen</a>
+							<a class="dropdown-item" href="mijnCadeaus.html">Mijn cadeau's</a>
+							<a class="dropdown-item
+								" href="https://www.cadeau.nl/themas/cadeau-idee" target="_blank">Ideeën nodig?
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">Inloggen</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="jumbotron">
+			<h1 id="titelGroot" class="display-4"></h1>
+			<br>
+			<div class="float-left">
+				<h4>Beschrijving:</h4>
+				<p id="beschrijvingGroot"></p>
+			</div>
+			<div class="float-right">
+				<h4>Einddatum:</h4>
+				<p id="einddatumGroot"></p>
+			</div><br>
+		</div>
+		<nav class="navbar navbar-dark bg-primary">
+			<font color="white"><h4 class="float-left">Ideeën:</h4></font>
+			<button type="button" class="btn btn-light btn-lg" data-toggle="modal" data-target="#myModal">Idee toevoegen</button>
+		</nav>
+		<div class="jumbotron">
+			<table class="table" id="mijnCadeausTable" style="width:80%">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Idee</th>
+					<th scope="col">Tijd vereist</th>
+					<th scope="col">Prijs</th>
+					<th scope="col">Opmerking</th>
+					<th scope="col">Stemmen</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<h4 class="modal-title"><font color="white">Idee toevoegen</font></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body form-control-static pull-left">
+        <form name="ideeToevoegen" id="ideeToevoegen">
+				<label for="titel">Idee naam:</label>
+				<input class="float-right" size="20" placeholder="Idee naam" type="text" id="titel" name="titel" required><br>
+				<label for="tijd">Vereiste tijd:</label>
+				<input class="float-right" maxlength="10" size="20" placeholder="Tijd vereist" type="text" id="tijd" name="tijd" required><br>
+				<label for="prijs">Prijs idee:</label>
+				<input class="float-right" step="0.01" size="20" placeholder="Prijs" type="number" id="prijs" name="prijs" required><br>
+				<label for="opmerking">Opmerking:</label>
+				<input class="float-right" size="20" placeholder="Optioneel" type="text" id="opmerking" name="opmerking">
+				<input type='hidden' name='id' id='planner_idInput'/>
+				<div class="modal-footer">
+					<button type="submit" role="button" id="ideeToevoegenKnop" name="ideeToevoegenKnop" class="btn btn-success">Opslaan</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Annuleer</button>
+				</div>
+			</form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plannerInfo.js"></script>
+</body>
+
+</html>
