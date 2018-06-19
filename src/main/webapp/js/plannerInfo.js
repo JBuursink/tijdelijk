@@ -97,7 +97,7 @@ document.getElementById("ideeToevoegenKnop").addEventListener("click", function 
     var formData = new FormData(document.querySelector("#ideeToevoegen"));
     formData.append('id', '1');
     var encData = new URLSearchParams(formData.entries());
-    fetch("/webapp/restservices/idee", {
+    fetch("/restservices/idee", {
             method: 'POST',
             body: encData
         })
