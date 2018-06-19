@@ -33,7 +33,7 @@ function getParam(url) {
     return obj;
 }
 
-fetch("/webapp/restservices/planners/" + getParam().id, {
+fetch("/restservices/planners/" + getParam().id, {
         method: 'GET'
     }).then(response => response.json())
     .then(function (myJson) {
@@ -44,7 +44,7 @@ fetch("/webapp/restservices/planners/" + getParam().id, {
         })
     });
 
-fetch("/webapp/restservices/idee/" + getParam().id, {
+fetch("/restservices/idee/" + getParam().id, {
         method: 'GET'
     }).then(response => response.json())
     .then(function (myJson) {
@@ -81,7 +81,7 @@ fetch("/webapp/restservices/idee/" + getParam().id, {
 
 function stem(event) {
     var id = event.target.id;
-    fetch("/webapp/restservices/idee/" + id, {
+    fetch("/restservices/idee/" + id, {
             method: 'PUT'
         }).then(function (response) {
             if (response.ok) { // response-status = 200 OK
