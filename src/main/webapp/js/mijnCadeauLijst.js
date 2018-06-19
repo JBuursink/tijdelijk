@@ -15,7 +15,7 @@ fetch("/restservices/planners", {
             var einddatum = document.createElement("TD");
             document.getElementById("tr" + row.planner_id).appendChild(einddatum).innerHTML = row.einddatum;
             var knop = document.createElement("TD")
-            document.getElementById("tr" + row.planner_id).appendChild(knop).innerHTML = "<a class='btn btn-success' href='/webapp/planner.html?id="+row.planner_id+"'>Bekijken</a>";
+            document.getElementById("tr" + row.planner_id).appendChild(knop).innerHTML = "<a class='btn btn-success' href='/planner.html?id="+row.planner_id+"'>Bekijken</a>";
             var verwijderKnop = document.createElement("TD");
             document.getElementById("tr" + row.planner_id).appendChild(verwijderKnop).innerHTML = "<button id='"+row.planner_id+"' class='btn btn-danger'>Verwijderen</button>";
             document.getElementById(row.planner_id).addEventListener("click", verwijderen);
