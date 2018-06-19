@@ -1,4 +1,4 @@
-fetch("/webapp/restservices/planners", {
+fetch("/restservices/planners", {
         method: 'GET'
     })
     .then(response => response.json())
