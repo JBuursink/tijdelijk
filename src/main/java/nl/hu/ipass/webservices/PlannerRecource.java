@@ -27,7 +27,7 @@ public class PlannerRecource {
 	@Produces("application/json")
 	public Response nieuwePlanner(@FormParam("titelCadeau") String titel, @FormParam("redenCadeau") String reden,
 			@FormParam("deadlineCadeau") String deadline) {
-		DateFormat format = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 		try {
 			Date deadlinePlanner = format.parse(deadline);
 			PlannerService service = ServiceProvider.getPlannerService();
