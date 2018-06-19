@@ -25,7 +25,7 @@ fetch("/restservices/planners", {
 function verwijderen(event) {
     var id = event.target.id;
     //fetch("/webapp/restservices/planners/")
-    fetch("/webapp/restservices/planners/" + id, {
+    fetch("/restservices/planners/" + id, {
             method: 'DELETE'
         })
         .then(function (response) {
