@@ -10,7 +10,7 @@ fetch("/restservices/planners", {
             var tr = document.createElement("TR");
             tr.setAttribute("id", "tr" + row.planner_id);
             var planner_id = document.createElement("TD");
-            document.getElementById("mijnCadeausTable").appendChild(tr).appendChild(planner_id).innerHTML = row.planner_id;
+            document.getElementById("mijnCadeausTable").appendChild(tr);
             var titel = document.createElement("TD");
             document.getElementById("tr" + row.planner_id).appendChild(titel).innerHTML = row.titel;
             var beschrijving = document.createElement("TD");
