@@ -21,7 +21,6 @@ fetch("/restservices/planners", {
             document.getElementById("tr" + row.planner_id).appendChild(knop).innerHTML = "<a class='btn btn-success' href='/planner.html?id="+row.planner_id+"'>Bekijken</a>";
             var verwijderKnop = document.createElement("TD");
             document.getElementById("tr" + row.planner_id).appendChild(verwijderKnop).innerHTML = "<button id='"+row.planner_id+"' class='btn btn-danger'>Verwijderen</button>";
-            //document.getElementById(row.planner_id).addEventListener("click", verwijderen);
             $(document).ready(function () {
                 $("#"+row.planner_id).click(function () {
                     deleteId = row.planner_id;
