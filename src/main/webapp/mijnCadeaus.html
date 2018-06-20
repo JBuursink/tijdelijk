@@ -52,7 +52,6 @@
 		<div class="jumbotron">
 			<table class="table" id="mijnCadeausTable" style ="width:80%">
 				<tr>
-					<th>#</th>
 					<th>Titel</th>
 					<th>Beschrijving</th>
 					<th>Deadline</th>
@@ -61,6 +60,26 @@
                 </tr>
             </table>
 		</div>
+		</div>
+	</div>
+	
+		<div class="modal fade" id="verwijderModal" tabindex="-1" role="dialog" aria-labelledby="verwijderLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="verwijderLabel">Weet je het zeker?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p id="plannerInfoDelete">.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="modalDelete" class="btn btn-success">Verwijder</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Annuleren</button>
+				</div>
+			</div>
 		</div>
 	</div>
 
