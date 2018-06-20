@@ -1,3 +1,6 @@
+var deleteId = 0;
+document.getElementById("modalDelete").addEventListener("click",verwijderen);
+
 fetch("/restservices/planners", {
         method: 'GET'
     })
@@ -19,13 +22,18 @@ fetch("/restservices/planners", {
             var verwijderKnop = document.createElement("TD");
             document.getElementById("tr" + row.planner_id).appendChild(verwijderKnop).innerHTML = "<button id='"+row.planner_id+"' class='btn btn-danger'>Verwijderen</button>";
             document.getElementById(row.planner_id).addEventListener("click", verwijderen);
+            $(document).ready(function () {
+                $("#"+row.planner_id).click(function () {
+                    deleteId = row.planner_id;
+                    $("#verwijderModal").modal();
+                    document.getElementById("plannerInfoDelete").innerHTML = "Wil je planner: " + "'" + row.titel + "'" + " verwijderen?";
+                });
+            });
         })
     });
 
-function verwijderen(event) {
-    var id = event.target.id;
-    //fetch("/webapp/restservices/planners/")
-    fetch("/restservices/planners/" + id, {
+function verwijderen() {
+    fetch("/restservices/planners/" + deleteId, {
             method: 'DELETE'
         })
         .then(function (response) {
