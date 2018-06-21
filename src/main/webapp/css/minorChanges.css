@@ -9,3 +9,11 @@
      border-top-left-radius: 5px;
      border-top-right-radius: 5px;
 }
+
+
+.currencyinput {
+    border: 1px inset #ccc;
+}
+.currencyinput input {
+    border: 0;
+}
