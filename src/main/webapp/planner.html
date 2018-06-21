@@ -86,13 +86,13 @@
       <div class="modal-body form-control-static pull-left">
         <form name="ideeToevoegen" id="ideeToevoegen">
 				<label for="titel">Idee naam:</label>
-				<input class="float-right" size="20" placeholder="Idee naam" type="text" id="titel" name="titel" required><br>
+				<input class="float-right" size="21" placeholder="Idee naam" type="text" id="titel" name="titel" required><br>
 				<label for="tijd">Vereiste tijd:</label>
-				<input class="float-right" maxlength="10" size="20" placeholder="Tijd vereist" type="text" id="tijd" name="tijd" required><br>
+				<input class="float-right" maxlength="10" size="21" placeholder="Tijd vereist" type="text" id="tijd" name="tijd" required><br>
 				<label for="prijs">Prijs idee:</label>
-				<input class="float-right" step="0.25" size="20" placeholder="Prijs" min="0" value="0.00" type="number" id="prijs" name="prijs" required><br>
+				<span  class="currencyinput float-right">€<input class="float-right" step="0.25" placeholder="Prijs" min="0" value="0.00" type="number" id="prijs" name="prijs" required></span><br>
 				<label for="opmerking">Opmerking:</label>
-				<input class="float-right" size="20" placeholder="Optioneel" type="text" id="opmerking" name="opmerking">
+				<input class="float-right" size="21" placeholder="Optioneel" type="text" id="opmerking" name="opmerking">
 				<input type='hidden' name='id' id='planner_idInput'/>
 				<div class="modal-footer">
 					<button type="submit" role="button" id="ideeToevoegenKnop" name="ideeToevoegenKnop" class="btn btn-success">Opslaan</button>
