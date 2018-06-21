@@ -10,6 +10,13 @@ public class Idee {
 	private String opmerking;
 
 	public Idee(int id, int plan_id, int stemmen, String ttl, String tijdver, double prs, String opm) {
+		if (prs > 0) {
+			prs = prs * 100;
+			prs = Math.round(prs);
+			prs = prs / 100;
+		} else {
+			prs = 0.00;
+		}
 		this.idee_ID = id;
 		this.planner_ID = plan_id;
 		this.aantalStemmen = stemmen;
