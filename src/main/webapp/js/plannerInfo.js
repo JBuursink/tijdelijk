@@ -52,7 +52,7 @@ fetch("/restservices/idee/" + getParam().id, {
             var tr = document.createElement("TR");
             tr.setAttribute("id", "tr" + row.idee_id);
             var idee_id = document.createElement("TD");
-            document.getElementById("mijnCadeausTable").appendChild(tr).appendChild(idee_id).innerHTML = row.idee_id;
+            document.getElementById("mijnCadeausTable").appendChild(tr);//.appendChild(idee_id).innerHTML = row.idee_id;
             var titel = document.createElement("TD");
             document.getElementById("tr" + row.idee_id).appendChild(titel).innerHTML = row.titel;
             var tijdvereist = document.createElement("TD");
