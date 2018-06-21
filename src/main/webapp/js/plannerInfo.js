@@ -91,6 +91,12 @@ function stem(event) {
 
 }
 
+function Copy() {
+  var Url = document.getElementById("url");
+  Url.select();
+  document.execCommand("copy");
+}
+
 document.getElementById("planner_idInput").value = getParam().id;
 
 document.getElementById("ideeToevoegenKnop").addEventListener("click", function () {
