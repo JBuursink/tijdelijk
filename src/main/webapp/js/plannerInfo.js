@@ -96,6 +96,7 @@ function Copy() {
   Url.innerHTML = window.location.href;
   Url.select();
   document.execCommand("copy");
+  alert("Deelbare link gekopieërd!");
 }
 
 document.getElementById("planner_idInput").value = getParam().id;
