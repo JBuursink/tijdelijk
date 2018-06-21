@@ -93,6 +93,7 @@ function stem(event) {
 
 function Copy() {
   var Url = document.getElementById("url");
+  Url.innerHTML = window.location.href;
   Url.select();
   document.execCommand("copy");
 }
