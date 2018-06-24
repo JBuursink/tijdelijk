@@ -86,19 +86,7 @@ public class PlannerPostgresDaoImpl extends PostgresBaseDao implements PlannerDa
 		}
 		return false;
 	}
-	//
-	// public boolean test(Planner planner) {
-	// try (Connection con = super.getConnection()) {
-	// Statement stmt = con.createStatement();
-	// // String s = ("INSERT INTO public.planner VALUES ('" +
-	// planner.getPlannerID() +
-	// // "');");
-	// // stmt.executeUpdate(s);
-	// } catch (SQLException sqle) {
-	// System.out.println(sqle);
-	// }
-	// return false;
-	// }
+
 
 	@Override
 	public List<Planner> findAll() {
